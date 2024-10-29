@@ -2,19 +2,61 @@
 //
 
 #include <iostream>
+#include <cstdlib>
+#include <iomanip>
+using namespace std;
+
+
+
+
+double area, perimeter, length, width;
+
+static void valid(double length, double width)
+{
+    if (length < 1 || width < 1) //input validation
+    {
+        cout << "Invalid input, please enter a value above 0";
+        exit(0);
+    }
+}
+
+
+static void getLW() //get input and then do calculations
+{
+    double length, width;
+    cout << "Please enter the length and then the width in correct order\n";
+    cin >> length >> width;
+    valid(length, width);
+    perimeter = 2 * (length + width);
+    area = length * width;
+    return ;
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  
+   
+    char response, y, Y;
+    do // menu setup
+    {
+        cout << "Please enter Y if you would like to calculate perimieter and area of a rectangle"
+            << "\nEnter N if you would like to quit the program\n";
+        cin >> response;
+
+        if (response == 89 || response == 121)
+        {
+            getLW();
+            cout << showpoint << fixed << setprecision(2) << "The area is " << area << " and the perimeter is " << perimeter << endl;
+
+        }
+        else;
+    }
+
+    while
+        (response == 89 || response == 121); // acssi values
+    cout << "Exiting program";
+    return 1;
+
+
+
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
