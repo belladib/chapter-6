@@ -9,7 +9,7 @@ using namespace std;
 void find(double, double, double, double);
 static void Print(double, double, double, double, double);
 
-double north, south, west, east, smallest, largest; //used in all parts of the program
+double north, south, west, east, smallest, largest, accidents; //used in all parts of the program
 
 int main()
 {
@@ -50,8 +50,11 @@ int main()
 
     cout << "\nThe safest region with the least amount of accidents was ";
     Print(smallest, east, west, south, north);
-    cout << " with " << smallest << " accidents\n";
-
+    cout << " with " << smallest;
+    if (accidents > 1)
+        cout << " accidents\n";
+    else if (accidents <= 1)
+        cout << " accident\n";
 }
 
 
