@@ -1,22 +1,45 @@
-// chapter 6.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+//converts F to C
 #include <iostream>
 #include <cstdlib>
 #include <iomanip>
+#include <cmath>
 using namespace std;
-int main()
+
+double C, F;
+
+static void form()
 {
-    std::cout << "Hello World!\n";
+    for (F = 0; F < 9; F++)
+        cout << endl;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+static void calc()
+{
+    // Adding table header
+    cout << left << setw(12) << "Fahrenheit" << setw(12) << "Celsius"
+        << setw(12) << "Fahrenheit" << setw(12) << "Celsius" << endl;
+    cout << "-------------------------------------------------------------" << endl; // Table separator
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+    for (F = 0; F <= 9; F++)
+    {
+        // Printing Fahrenheit and Celsius values side by side
+        cout << left << setw(12) << F;
+        C = (F - 32.0) * 5 / 9;
+        cout << setw(12) << fixed << showpoint << setprecision(2) << C;
+
+        // Now, printing corresponding Fahrenheit and Celsius values for F + 10
+        cout << setw(12) << F + 10;
+        C = (F + 10 - 32.0) * 5 / 9;
+        cout << setw(12) << fixed << showpoint << setprecision(2) << C << endl;
+    }
+}
+
+int main()
+{
+    cout << "Here is a chart of Fahrenheit converted to Celsius\n";
+    calc();  // Calls the table generation
+    C = (20 - 32.0) * 5 / 9;
+    cout << left << fixed << showpoint << setprecision(2) << setw(24) << " " << "20" << setw(10) << " " << C;
+}
+
+
