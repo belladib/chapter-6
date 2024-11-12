@@ -2,10 +2,27 @@
 //
 
 #include <iostream>
-
+#include <cstdlib>
+#include <iomanip>
+#include <cmath>
+using namespace std;
 int main()
 {
-    std::cout << "Hello World!\n";
+    double score1, score2, score3, score4, score5;
+
+
+    cout << "Please enter your 5 scores for the contestant, must be 1 - 10";
+    cin >> score1 >> score2 >> score3 >> score4 >> score5;
+    if (score1 < 0 || score1 > 10 || score2 < 0 || score2 > 10 || score3 < 0 || score3 > 10 || score4 < 0 || score4 > 10 || score5 < 0 || score5 > 10)
+    {
+        cout << "Invalid, must be between 0 and 10.";
+            return 1;
+    }
+
+
+
+
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
